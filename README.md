@@ -1,1 +1,2 @@
 # AssetsTracker
+![](ss/a.png)

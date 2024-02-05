@@ -12,7 +12,7 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Snippets API",
+      title="AssetsTracker Website",
       default_version='v1',
       description="AssetsTracker Website",
       terms_of_service="https://www.google.com/policies/terms/",
@@ -27,6 +27,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('accounts/',include('Accounts.urls')),
+    path('',include('main.urls')),
     path('api/v1/',
          include([            
             path('swagger.json/', schema_view.without_ui(cache_timeout=0), name='schema-json'),

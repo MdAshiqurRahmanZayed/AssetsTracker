@@ -1,0 +1,549 @@
+swagger: '2.0'
+info:
+  title: AssetsTracker Website
+  description: AssetsTracker Website
+  termsOfService: https://www.google.com/policies/terms/
+  contact:
+    email: contact@snippets.local
+  license:
+    name: BSD License
+  version: v1
+host: 127.0.0.1:8000
+schemes:
+- http
+basePath: /
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  Basic:
+    type: basic
+security:
+- Basic: []
+paths:
+  /accounts/login/:
+    post:
+      operationId: accounts_login_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/AuthToken'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/AuthToken'
+      tags:
+      - accounts
+    parameters: []
+  /accounts/register/:
+    post:
+      operationId: accounts_register_create
+      description: ''
+      parameters: []
+      responses:
+        '201':
+          description: ''
+      tags:
+      - accounts
+    parameters: []
+  /companies/:
+    get:
+      operationId: companies_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Company'
+      tags:
+      - companies
+    post:
+      operationId: companies_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Company'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Company'
+      tags:
+      - companies
+    parameters: []
+  /companies/{id}/:
+    get:
+      operationId: companies_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Company'
+      tags:
+      - companies
+    put:
+      operationId: companies_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Company'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Company'
+      tags:
+      - companies
+    patch:
+      operationId: companies_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Company'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Company'
+      tags:
+      - companies
+    delete:
+      operationId: companies_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - companies
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this company.
+      required: true
+      type: integer
+  /devicelogs/:
+    get:
+      operationId: devicelogs_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DeviceLog'
+      tags:
+      - devicelogs
+    post:
+      operationId: devicelogs_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DeviceLog'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DeviceLog'
+      tags:
+      - devicelogs
+    parameters: []
+  /devicelogs/{id}/:
+    get:
+      operationId: devicelogs_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DeviceLog'
+      tags:
+      - devicelogs
+    put:
+      operationId: devicelogs_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DeviceLog'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DeviceLog'
+      tags:
+      - devicelogs
+    patch:
+      operationId: devicelogs_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DeviceLog'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/DeviceLog'
+      tags:
+      - devicelogs
+    delete:
+      operationId: devicelogs_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - devicelogs
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this device log.
+      required: true
+      type: integer
+  /devices/:
+    get:
+      operationId: devices_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/DeviceCreate'
+      tags:
+      - devices
+    post:
+      operationId: devices_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/DeviceCreate'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/DeviceCreate'
+      tags:
+      - devices
+    parameters: []
+  /devices/{id}/:
+    get:
+      operationId: devices_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Employee'
+      tags:
+      - devices
+    put:
+      operationId: devices_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Employee'
+      tags:
+      - devices
+    patch:
+      operationId: devices_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Employee'
+      tags:
+      - devices
+    delete:
+      operationId: devices_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - devices
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this device.
+      required: true
+      type: integer
+  /employees/:
+    get:
+      operationId: employees_list
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Employee'
+      tags:
+      - employees
+    post:
+      operationId: employees_create
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Employee'
+      responses:
+        '201':
+          description: ''
+          schema:
+            $ref: '#/definitions/Employee'
+      tags:
+      - employees
+    parameters: []
+  /employees/{id}/:
+    get:
+      operationId: employees_read
+      description: ''
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Employee'
+      tags:
+      - employees
+    put:
+      operationId: employees_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Employee'
+      tags:
+      - employees
+    patch:
+      operationId: employees_partial_update
+      description: ''
+      parameters:
+      - name: data
+        in: body
+        required: true
+        schema:
+          $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: ''
+          schema:
+            $ref: '#/definitions/Employee'
+      tags:
+      - employees
+    delete:
+      operationId: employees_delete
+      description: ''
+      parameters: []
+      responses:
+        '204':
+          description: ''
+      tags:
+      - employees
+    parameters:
+    - name: id
+      in: path
+      description: A unique integer value identifying this employee.
+      required: true
+      type: integer
+definitions:
+  AuthToken:
+    required:
+    - username
+    - password
+    type: object
+    properties:
+      username:
+        title: Username
+        type: string
+        minLength: 1
+      password:
+        title: Password
+        type: string
+        minLength: 1
+      token:
+        title: Token
+        type: string
+        readOnly: true
+        minLength: 1
+  User:
+    required:
+    - username
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      username:
+        title: Username
+        description: Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+          only.
+        type: string
+        pattern: ^[\w.@+-]+$
+        maxLength: 150
+        minLength: 1
+      email:
+        title: Email address
+        type: string
+        format: email
+        maxLength: 254
+  Company:
+    required:
+    - name
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      name:
+        title: Name
+        type: string
+        maxLength: 100
+        minLength: 1
+      user:
+        $ref: '#/definitions/User'
+  DeviceLog:
+    required:
+    - device
+    - employee
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      check_in_date:
+        title: Check in date
+        type: string
+        format: date-time
+        x-nullable: true
+      check_out_date:
+        title: Check out date
+        type: string
+        format: date-time
+        x-nullable: true
+      condition_when_checked_out:
+        title: Condition when checked out
+        type: string
+        enum:
+        - good
+        - fair
+        - poor
+      condition_when_checked_in:
+        title: Condition when checked in
+        type: string
+        enum:
+        - good
+        - fair
+        - poor
+      description:
+        title: Description
+        type: string
+        maxLength: 200
+        x-nullable: true
+      device:
+        title: Device
+        type: integer
+      employee:
+        title: Employee
+        type: integer
+  DeviceCreate:
+    required:
+    - name
+    - current_condition
+    - company
+    type: object
+    properties:
+      id:
+        title: ID
+        type: integer
+        readOnly: true
+      name:
+        title: Name
+        type: string
+        maxLength: 100
+        minLength: 1
+      current_condition:
+        title: Current condition
+        type: string
+        enum:
+        - good
+        - fair
+        - poor
+      company:
+        title: Company
+        type: integer
+  Employee:
+    type: object
+    properties:
+      user:
+        $ref: '#/definitions/User'
+      company:
+        $ref: '#/definitions/Company'
